@@ -63,15 +63,90 @@ export default function HomeV3_OralLink() {
           {/* ── Three Pathway Cards ──────────────────────────────────────────── */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-            {/* Card 1: AI Dental Scan ──────────────────────────────────────── */}
-            <div className="rounded-xl p-8 border shadow-sm relative flex flex-col card-hover" style={{background:'#EFF6FF', borderColor:'#BFDBFE'}}>
-              {/* Premium badge */}
-              <span className="absolute -top-3 right-4 text-xs font-semibold px-3 py-1 rounded-md shadow-sm" style={{background:'#2E5FA3', color:'#fff'}}>
+            {/* CARD 1 (NEW FIRST): BROWSE & COMPARE - MOST PROMINENT (Blue) */}
+            <div className="rounded-xl p-8 border-2 border-blue-300 shadow-lg relative flex flex-col card-hover bg-gradient-to-br from-blue-50 to-blue-100">
+              
+              <div className="text-center mb-6 min-h-[200px] flex flex-col justify-start">
+                <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Browse &amp; Compare</h3>
+                <p className="text-base text-gray-700 leading-relaxed">Explore clinics at your own pace</p>
+              </div>
+
+              <div className="text-sm text-blue-800 font-semibold mb-6 text-center min-h-[50px] flex items-center justify-center">
+                Perfect for: Experienced patients, self-researchers
+              </div>
+
+              <ul className="space-y-3 mb-6 text-sm text-gray-700 min-h-[160px]">
+                {['Browse all verified clinics', 'Advanced search & filtering', 'Compare clinics side-by-side', 'Read real patient reviews'].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckIcon color="text-blue-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-auto">
+                <button
+                  onClick={() => navigate('/clinics')}
+                  className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all hover:opacity-90 shadow-md min-h-[48px]"
+                >
+                  Browse Clinics
+                </button>
+                <p className="text-center text-xs text-slate-500 mt-2 min-h-[20px]">No account required</p>
+              </div>
+            </div>
+
+            {/* CARD 2 (STAYS SECOND): SMART AI COMPANION - Medium Prominence (Teal) */}
+            <div className="rounded-xl p-8 border-2 border-teal-200 shadow-md relative flex flex-col card-hover bg-gradient-to-br from-teal-50 to-emerald-50">
+              
+              <div className="text-center mb-6 min-h-[200px] flex flex-col justify-start">
+                <div className="bg-teal-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Smart AI Companion</h3>
+                <p className="text-base text-gray-700 leading-relaxed">Get personalised recommendations instantly</p>
+              </div>
+
+              <div className="text-sm text-teal-800 font-semibold mb-6 text-center min-h-[50px] flex items-center justify-center">
+                Perfect for: First-time patients seeking guidance
+              </div>
+
+              <ul className="space-y-3 mb-6 text-sm text-gray-700 min-h-[160px]">
+                {['Ask any dental question', 'Compare JB vs SG clinics', 'Book appointments directly', 'Powered by patient reviews'].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckIcon color="text-teal-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-auto">
+                <button
+                  onClick={openChatWidget}
+                  className="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all hover:opacity-90 shadow-sm min-h-[48px]"
+                >
+                  Start Chatting — Free Account
+                </button>
+                <p className="text-center text-xs text-slate-500 mt-2 min-h-[20px]">40 queries/month · No credit card required</p>
+              </div>
+            </div>
+
+            {/* CARD 3 (NEW THIRD): AI DENTAL SCAN - LEAST PROMINENT (Gray) */}
+            <div className="rounded-xl p-8 border border-slate-300 shadow-sm relative flex flex-col card-hover bg-gradient-to-br from-slate-50 to-slate-100">
+              
+              {/* Premium badge - KEPT */}
+              <span className="absolute -top-3 right-4 text-xs font-semibold px-3 py-1.5 rounded-md shadow-sm bg-slate-700 text-white">
                 Premium
               </span>
 
-              <div className="text-center mb-6">
-                <div className="bg-emerald-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="text-center mb-6 min-h-[200px] flex flex-col justify-start">
+                <div className="bg-slate-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -81,82 +156,12 @@ export default function HomeV3_OralLink() {
                 <p className="text-base text-gray-700 leading-relaxed">Identify your dental needs before booking</p>
               </div>
 
-              <div className="text-sm text-emerald-800 font-semibold mb-6 text-center">
+              <div className="text-sm text-slate-700 font-semibold mb-6 text-center min-h-[50px] flex items-center justify-center">
                 Perfect for: Uncertain about treatment needs
               </div>
 
-              <ul className="space-y-3 mb-6 text-sm text-gray-700 flex-1">
-                {['5-photo smartphone scan', 'Instant risk assessment', 'Matched clinic recommendations'].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckIcon color="text-emerald-600" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                onClick={() => window.location.href = 'https://orallink.orachope.org'}
-                className="block w-full text-white font-semibold py-3 px-6 rounded-lg text-center text-sm transition-opacity hover:opacity-90 shadow-sm mt-auto"
-                style={{background:'#2E5FA3'}}
-              >
-                Start Free 30-Day Trial
-              </button>
-              <p className="text-center text-xs text-slate-400 mt-2">Included with Premium · SGD 10/year after trial</p>
-            </div>
-
-            {/* Card 2: Smart AI Companion ─────────────────────────────────── */}
-            <div className="rounded-xl p-8 border shadow-sm flex flex-col card-hover" style={{background:'#F0FDFA', borderColor:'#99F6E4'}}>
-              <div className="text-center mb-6">
-                <div className="bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Smart AI Companion</h3>
-                <p className="text-base text-gray-700 leading-relaxed">Get personalised recommendations instantly</p>
-              </div>
-
-              <div className="text-sm text-blue-800 font-semibold mb-6 text-center">
-                Perfect for: First-time patients seeking guidance
-              </div>
-
-              <ul className="space-y-3 mb-6 text-sm text-gray-700 flex-1">
-                {['Ask any dental question', 'Compare JB vs SG clinics', 'Book appointments directly', 'Powered by patient reviews'].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckIcon color="text-blue-600" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                onClick={openChatWidget}
-                className="w-full text-white font-semibold py-3 px-6 rounded-lg text-sm transition-opacity hover:opacity-90 shadow-sm mt-auto"
-                style={{background:'#0D7A7A'}}
-              >
-                Start Chatting — Free Account
-              </button>
-              <p className="text-center text-xs text-slate-400 mt-2">40 queries/month · No credit card required</p>
-            </div>
-
-            {/* Card 3: Browse & Compare ────────────────────────────────────── */}
-            <div className="rounded-xl p-8 border shadow-sm flex flex-col card-hover" style={{background:'#F8FAFC', borderColor:'#E2E8F0'}}>
-              <div className="text-center mb-6">
-                <div className="bg-slate-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Browse &amp; Compare</h3>
-                <p className="text-base text-gray-700 leading-relaxed">Explore clinics at your own pace</p>
-              </div>
-
-              <div className="text-sm text-slate-800 font-semibold mb-6 text-center">
-                Perfect for: Experienced patients, self-researchers
-              </div>
-
-              <ul className="space-y-3 mb-6 text-sm text-gray-700 flex-1">
-                {['Browse all verified clinics', 'Advanced search & filtering', 'Compare clinics side-by-side', 'Read real patient reviews'].map((item) => (
+              <ul className="space-y-3 mb-6 text-sm text-gray-700 min-h-[160px]">
+                {['5-photo smartphone scan', 'Instant risk assessment', 'Matched clinic recommendations', 'Easy to understand report'].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckIcon color="text-slate-600" />
                     <span>{item}</span>
@@ -164,13 +169,15 @@ export default function HomeV3_OralLink() {
                 ))}
               </ul>
 
-              <button
-                onClick={() => navigate('/clinics')}
-                className="w-full bg-slate-700 hover:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-opacity hover:opacity-90 shadow-sm mt-auto"
-              >
-                Browse Clinics
-              </button>
-              <p className="text-center text-xs text-slate-400 mt-2">No account required</p>
+              <div className="mt-auto">
+                <button
+                  onClick={() => window.location.href = 'https://orallink.orachope.org'}
+                  className="w-full bg-slate-600 hover:bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-all hover:opacity-90 shadow-sm min-h-[48px]"
+                >
+                  Start Free 30-Day Trial
+                </button>
+                <p className="text-center text-xs text-slate-500 mt-2 min-h-[20px]">Included with Premium · SGD 10/year after trial</p>
+              </div>
             </div>
 
           </div>{/* end grid */}
